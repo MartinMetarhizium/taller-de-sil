@@ -57,7 +57,7 @@ export default {
             const email = prompt('Please enter your email to sign in:');
             const auth = getAuth();
             const actionCodeSettings = {
-                url: `http://localhost:8080/products/${this.$route.params.productId}`,
+                url: `https://taller-de-sil.onrender.com/products/${this.$route.params.productId}`,
                 handleCodeInApp: true,
             }
             await sendSignInLinkToEmail(auth, email, actionCodeSettings);
@@ -75,7 +75,7 @@ export default {
             window.localStorage.removeItem('emailForSignIn');
         }
 
-        const response = await axios.get(`http://127.0.0.1:8000/api/products/${this.$route.params.productId}`);
+        const response = await axios.get(`/api/products/${this.$route.params.productId}`);
         const product = response.data;
         this.product = product;
         if(this.user) {
