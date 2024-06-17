@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "dev": "npx nodemon --exec npx babel-node src/server.js",
-  "build": "npx babel ./src --out-dir ./build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon --exec npx babel-node src/server.js",
+    "build": "babel ./src --out-dir ./build"
   },
   "keywords": [],
   "author": "",
