@@ -5,7 +5,12 @@ import cors from 'cors';
 
 async function start() {
     const url = `mongodb+srv://martinhorn2014:cZzeQcltSuxgvfTX@vue-project.kodctjv.mongodb.net/?retryWrites=true&w=majority`;
-    const client = new MongoClient(url);
+    const client = new MongoClient(url, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        ssl: true,
+        tlsAllowInvalidCertificates: true // This can help with certificate issues
+    });
 
     const app = express();
     app.use(express.json());
