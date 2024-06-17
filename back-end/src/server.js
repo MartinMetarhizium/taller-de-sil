@@ -8,7 +8,7 @@ dotenv.config();
 
 
 async function start() {
-    const url = process.env.MONGO_URI || `mongodb+srv://martinhorn2014:cZzeQcltSuxgvfTX@vue-project.kodctjv.mongodb.net/?retryWrites=true&w=majority&appName=vue-project`;
+    const url = `mongodb+srv://martinhorn2014:cZzeQcltSuxgvfTX@vue-project.kodctjv.mongodb.net/?retryWrites=true&w=majority&appName=vue-project`;
     const client = new MongoClient(url, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
