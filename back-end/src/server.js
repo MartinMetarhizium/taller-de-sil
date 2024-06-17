@@ -2,12 +2,14 @@ import express from 'express';
 import { MongoClient } from 'mongodb';
 import path from 'path';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 
 async function start() {
-    const url = `mongodb+srv://martinhorn2014:cZzeQcltSuxgvfTX@vue-project.kodctjv.mongodb.net/?retryWrites=true&w=majority`;
+    const url = process.env.MONGO_URI || `mongodb+srv://martinhorn2014:cZzeQcltSuxgvfTX@vue-project.kodctjv.mongodb.net/?retryWrites=true&w=majority`;
     const client = new MongoClient(url, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
         ssl: true,
         tlsAllowInvalidCertificates: true // This can help with certificate issues
     });
